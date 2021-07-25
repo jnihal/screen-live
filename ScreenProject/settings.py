@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'ScreenProject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'debf63gbcsgooe',
+        'HOST': 'ec2-107-21-10-179.compute-1.amazonaws.com',
+        'PORT': 5432,
+        'USER': 'dbhsmseuahkxxo',
+        'PASSWORD': '64450be3db32e676d803cae25e227545410b3412e4f5ab88c25a4289b7bbb408'
     }
 }
 
