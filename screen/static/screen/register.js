@@ -15,8 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     next.addEventListener('click', function() {
 
-        
-
         if (validate()) {
             profile.style.display = 'none';
             login.style.display = 'block';
