@@ -18,5 +18,5 @@ urlpatterns = [
     path('watchlist/<int:id>', views.watch_movie, name='watchlist'),
     path('seenlist/<int:id>', views.seen_movie, name='seenlist'),
     path('likedlist/<int:id>', views.like_movie, name='likedlist'),
-    path('<str:list_name>', views.get_list, name='getList'),
+    path('api/<str:list_name>', views.get_list, name='getList'),
 ]

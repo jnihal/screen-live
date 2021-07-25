@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
         container.innerHTML = '<h3>Liked Movies</h3>'
     }
 
-    fetch(list)
+    fetch(`api/${list}`)
     .then(response => response.json())
     .then(data => {
         data.list.forEach(element => {
