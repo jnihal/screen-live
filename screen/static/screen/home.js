@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    fetch(`api/${likedlist}`)
+    fetch('/api/likedlist')
     .then(response => response.json())
     .then(data => {
         array = []
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
     })
 
-    fetch(`api/${watchlist}`)
+    fetch('/api/watchlist')
     .then(response => response.json())
     .then(data => {
         if (data.list.length == 0) {
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function add_post(element, list) {
-    fetch(`api/${seenlist}`)
+    fetch('/api/seenlist')
     .then(response => response.json())
     .then(data => {
         array = []
@@ -72,8 +72,6 @@ function add_post(element, list) {
             document.getElementById(list).append(link)
         }
     })
-
-    
 };
 
 async function fetchMetaData(array) {
