@@ -1,0 +1,1 @@
+web: gunicorn ScreenProject.wsgi --log-file -

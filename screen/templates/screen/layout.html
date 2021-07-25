@@ -1,0 +1,108 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %}Screen{% endblock %}</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <script src="{% static 'screen/sidebar.js' %}"></script>
+        <link href="{% static 'screen/main.css' %}" rel="stylesheet">
+        <link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}"/>
+        {% block script %}
+        {% endblock %}
+    </head>
+    <body>
+        <div class="container-fluid m-0 h-100">
+            <div class="row m-0 g-0">
+                <div id="sidebar" class="col-auto sidebar">
+                    <div>
+                        <a href="{% url 'index' %}">
+                            <img class="logo" src="{% static 'screen/media/logo.svg' %}" alt="Screen">
+                        </a>
+                    </div>
+                    {% block sidebar %}
+                    {% endblock %}
+                </div>
+                <div class="col w-25 main-page">
+                    <div class="row align-items-center justify-content-end menubar">
+                        {% block menubar %}
+                        {% endblock %}
+                        <div class="col-auto p-0 dropdown">
+                            <button class="my-account">
+                                {{ request.user.first_name }}
+                                <span class="material-icons dropdown-icon">arrow_drop_down</span>
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="{% url 'moviesToWatch' %}">
+                                    <span class="material-icons">watch_later</span>
+                                    Movies to Watch
+                                </a>
+                                <a href="{% url 'moviesWatched' %}">
+                                    <span class="material-icons">library_add_check</span>
+                                    Movies Watched
+                                </a>
+                                <a href="{% url 'likedMovies' %}">
+                                    <span class="material-icons">favorite</span>
+                                    Liked Movies
+                                </a>
+                                <hr style="margin: 0;">
+                                <div class="row justify-content-center">
+                                    <a class="btn btn-sm rounded-pill btn-outline-danger logout-btn" href="{% url 'logout' %}">Log Out</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row align-items-center justify-content-between menubar-mobile">
+                        <div class="col-auto p-0">
+                            <button id="menuBtn" class="menu-btn">
+                                <span class="material-icons">menu</span>
+                            </button>
+                        </div>
+                        <div id="sidebarMobile" class="sidebar-mobile">
+                            <button id="closeBtn" class="close-btn">
+                                <span class="material-icons">close</span>
+                            </button>
+                            {% block sidebar-small %}
+                            {% endblock %}
+                        </div>
+                        <div class="col-auto">
+                            <a href="{% url 'index' %}">
+                                <img class="logo" src="{% static 'screen/media/logo.svg' %}" alt="Screen">
+                            </a>
+                        </div>
+                        <div class="col-auto p-0 dropdown">
+                            <button class="my-account">
+                                <span class="material-icons account-icon">account_circle</span>
+                                <span class="material-icons dropdown-icon">arrow_drop_down</span>
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="{% url 'moviesToWatch' %}">
+                                    <span class="material-icons">watch_later</span>
+                                    Movies to Watch
+                                </a>
+                                <a href="{% url 'moviesWatched' %}">
+                                    <span class="material-icons">library_add_check</span>
+                                    Movies Watched
+                                </a>
+                                <a href="{% url 'likedMovies' %}">
+                                    <span class="material-icons">favorite</span>
+                                    Liked Movies
+                                </a>
+                                <hr style="margin: 0;">
+                                <div class="row justify-content-center">
+                                    <a class="btn btn-sm rounded-pill btn-outline-danger logout-btn" href="{% url 'logout' %}">Log Out</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-0 m-0 p-2 justify-content-center" id="movie-container">
+                        {% block body %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

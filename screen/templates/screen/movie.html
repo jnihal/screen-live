@@ -1,0 +1,110 @@
+{% extends "screen/layout.html" %}
+{% load static %}
+
+
+{% block script %}
+    <script src="{% static 'screen/movie.js' %}"></script>
+    <script src="{% static 'screen/watchlist.js' %}"></script>
+    <script src="{% static 'screen/seenlist.js' %}"></script>
+    <script src="{% static 'screen/likedlist.js' %}"></script>
+    <script src="{% static 'screen/similar.js' %}"></script>
+{% endblock %}
+
+{% block sidebar %}
+    <a href="{% url 'index' %}">
+        <div class="sidebar-item">
+            <span class="material-icons">home</span>
+            Home
+        </div>
+    </a>
+    <a href="{% url 'discover' %}">
+        <div class="sidebar-item">
+            <span class="material-icons">explore</span>
+            Discover
+        </div>
+    </a>
+    <a href="{% url 'top_rated' %}">
+        <div class="sidebar-item">
+            <span class="material-icons">star</span>
+            Top Rated
+        </div>
+    </a>
+    <a href="{% url 'upcoming' %}">
+        <div class="sidebar-item">
+            <span class="material-icons">upcoming</span>
+            Upcoming
+        </div>
+    </a>
+{% endblock %}
+
+{% block sidebar-small %}
+    <a href="{% url 'index' %}">
+        <div class="sidebar-item">
+            <span class="material-icons">home</span>
+            Home
+        </div>
+    </a>
+    <a href="{% url 'discover' %}">
+        <div class="sidebar-item">
+            <span class="material-icons">explore</span>
+            Discover
+        </div>
+    </a>
+    <a href="{% url 'top_rated' %}">
+        <div class="sidebar-item">
+            <span class="material-icons">star</span>
+            Top Rated
+        </div>
+    </a>
+    <a href="{% url 'upcoming' %}">
+        <div class="sidebar-item">
+            <span class="material-icons">upcoming</span>
+            Upcoming
+        </div>
+    </a>
+{% endblock %}
+
+{% block menubar %}
+    <div class="col my-account">
+        <a href="javascript:history.back()">
+            <span class="material-icons dropdown-icon">arrow_back</span>
+        </a>
+    </div>
+{% endblock %}
+
+{% block body %}
+    <div id="moviePage" class="row pe-0 movie-page">
+        <div id="movieDesc" class="row pe-0 movie-description">
+            <div id="movieTitle" class="row movie-title"></div>
+            <div id="movieInfo" class="row movie-info"></div>
+            <div class="row mt-2 mb-2">
+                <a id="trailerLink" class="col-auto btn btn-sm rounded-pill trailer-btn" href="#" target="_blank">
+                    <span class="material-icons trailer-icon">play_arrow</span>
+                    Watch Trailer
+                </a>
+                <a id="imdbLink" class="col-auto btn btn-sm rounded-pill imdb-btn" href="#" target="_blank">
+                    <span>IMDb</span>
+                </a>
+                <button id="watchLater" class="col-auto utility-btn">
+                    <span class="material-icons">watch_later</span>
+                </button>
+                <button id="alreadyWatched" class="col-auto utility-btn">
+                    <span class="material-icons">library_add_check</span>
+                </button>
+                <button id="liked" class="col-auto utility-btn like">
+                    <span class="material-icons">favorite</span>
+                </button>
+            </div>
+            <div id="movieBrief" class="row mt-2"></div>
+            <div class="row mt-4 movie-add-info">
+                <div id="movieCrew" class="col-xl-7 col-12 movie-crew">
+                    <div class="row">Director: <span id="director" class="col movie-crew-names"></span></div>
+                    <div class="row">Cast: <span id="cast" class="col movie-crew-names"></span></div>
+                    <div class="row">Original Language: <span id="language" class="col movie-crew-names"></span></div>
+                </div>
+                <div id="movieStream" class="col movie-stream"></div>
+            </div>
+            <div id="similarMovies" class="row p-0 g-0 m-0 mt-5 similar-movies justify-content-center"><h5>Similar Movies</h5></div>
+        </div>
+    </div>
+{% endblock %}

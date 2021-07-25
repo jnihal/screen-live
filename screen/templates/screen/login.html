@@ -1,0 +1,29 @@
+{% extends "screen/layout_authentication.html" %}
+
+{% block body %}
+
+    <header>Sign In</header>
+    <hr>
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+
+        {% if message %}
+            <div class="error-message">{{ message }}</div>
+        {% endif %}
+
+        <div class="form-floating mt-5 mb-4">
+            <input autofocus class="form-control" id="floatingInput" type="email" name="email" placeholder="Email">
+            <label for="floatingInput">Email</label>
+        </div>
+        <div class="form-floating mb-4">
+            <input class="form-control" id="floatingInput" type="password" name="password" placeholder="Password">
+            <label for="floatingInput">Password</label>
+        </div>
+
+        <div class="row mt-5 justify-content-between">
+            <div class="col-auto"><a class="btn bg-transparent ps-0 pe-0 login-shortcut" href="{% url 'register' %}">Create Account</a></div>
+            <div class="col-auto"><input class="btn btn-outline-light" type="submit" value="Sign In"></div>
+        </div>
+    </form>
+
+{% endblock %}

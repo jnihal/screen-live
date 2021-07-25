@@ -1,0 +1,61 @@
+{% extends "screen/layout.html" %}
+{% load static %}
+
+
+{% block script %}
+    <script src="{% static 'screen/top_rated.js' %}"></script>
+{% endblock %}
+
+{% block sidebar %}
+    <a href="{% url 'index' %}">
+        <div class="sidebar-item">
+            <span class="material-icons">home</span>
+            Home
+        </div>
+    </a>
+    <a href="{% url 'discover' %}">
+        <div class="sidebar-item">
+            <span class="material-icons">explore</span>
+            Discover
+        </div>
+    </a>
+    <a href="{% url 'top_rated' %}">
+        <div class="sidebar-item active">
+            <span class="material-icons">star</span>
+            Top Rated
+        </div>
+    </a>
+    <a href="{% url 'upcoming' %}">
+        <div class="sidebar-item">
+            <span class="material-icons">upcoming</span>
+            Upcoming
+        </div>
+    </a>
+{% endblock %}
+
+{% block sidebar-small %}
+    <a href="{% url 'index' %}">
+        <div class="sidebar-item">
+            <span class="material-icons">home</span>
+            Home
+        </div>
+    </a>
+    <a href="{% url 'discover' %}">
+        <div class="sidebar-item">
+            <span class="material-icons">explore</span>
+            Discover
+        </div>
+    </a>
+    <a href="{% url 'top_rated' %}">
+        <div class="sidebar-item active">
+            <span class="material-icons">star</span>
+            Top Rated
+        </div>
+    </a>
+    <a href="{% url 'upcoming' %}">
+        <div class="sidebar-item">
+            <span class="material-icons">upcoming</span>
+            Upcoming
+        </div>
+    </a>
+{% endblock %}

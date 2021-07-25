@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --background: #191a1f;
+    --primary: #7bc196;
+    --secondary: #dd6b60;
+    --tertiary: #5d5d5d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+body {
+    background-color: var(--background);
+    height: 100vh;
+}
+
+.logo {
+    width: 30em;
+}
+
+.description {
+    color: var(--secondary);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 1.5em;
+}
+
+.login-form {
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 1px solid var(--tertiary);
+    position: relative;
+}
+
+#floatingInput {
+    color: white;
+}
+
+.login-form header {
+    font-size: 1.5rem;
+}
+
+.form-control {
+    background-color: transparent;
+}
+
+.form-control:focus {
+    background-color: transparent;
+}
+
+.left-card {
+    margin-bottom: 8rem;
+    margin-top: 8rem;
+}
+
+.profile-image {
+    display: block;
+    height: 10em;
+    object-fit: cover;
+    width: 10em;
+    border-radius: 50%;
+    margin: 1em auto;
+}
+
+.image-label {
+    position: relative;
+    display: block;
+    margin: auto;
+    width: 10em;
+    border-radius: 50%;
+}
+
+.overlay {
+    position: absolute; 
+    bottom: 0;
+    background: #191a1f8e;
+    width: 100%;
+    transition: .5s ease;
+    opacity:0;
+    color: white;
+    font-size: 1em;
+    padding: .9em;
+    text-align: center;
+}
+
+.profile-image:hover + .overlay {
+    opacity: 1;
+}
+
+.profile-image:hover {
+    opacity: .8;
+    cursor: pointer;
+}
+
+.error-message {
+    position: absolute;
+    z-index: 1;
+    top: 5em;
+    color: brown;
+}
+
+.login-shortcut {
+    color: white !important;
+    font-weight: 600;
+}

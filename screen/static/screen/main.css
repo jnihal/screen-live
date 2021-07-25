@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --background: #191a1f;
+    --primary: #64C191;
+    --secondary: #dd6b60;
+    --tertiary: #5d5d5d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+body {
+    background-color: var(--background);
+    min-height: 100vh;
+}
+
+.logo {
+    width: 70%;
+    margin-bottom: 3em;
+}
+
+.sidebar {
+    min-height: 100vh;
+    width: 280px;
+    border-right: 1px solid var(--tertiary);
+    padding-left: 1em;
+    padding-top: 1.5em;
+}
+
+.sidebar-item {
+    margin-bottom: 0.5em;
+    font-size: 1.7em;
+    color: var(--tertiary);
+    width: 100%;
+}
+
+.sidebar a {
+    text-decoration: none;
+}
+
+.sidebar .material-icons {
+    vertical-align: -2px;
+    color: var(--tertiary);
+}
+
+.sidebar-item.active, .sidebar-item:hover {
+    border-right: 8px solid var(--primary);
+    color: white;
+    font-weight: 500;
+}
+
+.sidebar-item.active .material-icons, .sidebar-item:hover > .material-icons {
+    color: var(--primary);
+}
+
+.main-page {
+    padding: 1.5em;
+}
+
+.logout-btn {
+    color: var(--secondary) !important;
+    border-color: var(--secondary);
+    padding: 0.5em 2em;
+    width: fit-content;
+    margin: 0.7em 0;
+}
+
+.logout-btn:hover {
+    color: white !important;
+    border-color: var(--secondary);
+    background-color: var(--secondary);
+}
+
+.my-account {
+    font-size: 1.5em;
+    font-weight: 400;
+    background-color: transparent;
+    border: none;
+}
+
+.dropdown-icon {
+    vertical-align: -2px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    width: fit-content;
+    white-space: nowrap;
+    z-index: 1;
+    background-color: #2e2f38;
+    padding: 0.5em 0.7em 0 0.5em;
+    border-radius: 0.5em;
+    right: 0.5em;
+}
+  
+.dropdown-content a {
+    color: rgb(160, 160, 160);
+    padding-bottom: 0.5em;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover > .material-icons, .dropdown-content a:hover {
+    color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content .material-icons {
+    vertical-align: middle;
+    padding-right: 0.2em;
+    color: rgb(160, 160, 160);
+}
+
+.menubar-mobile {
+    display: none;
+}
+
+#image {
+    width: 13.9em;
+    height: 21em;
+    border-radius: 0.5em;
+    margin: 0.5em;
+    box-sizing: border-box;
+    transition: transform .2s;
+}
+
+#image:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+}
+
+#movie-container {
+    height: 89vh;
+    overflow-y: scroll;
+    align-content: flex-start;
+}
+
+#movie-container::-webkit-scrollbar {
+    display: none;
+}
+
+
+@media only screen and (max-width: 850px) {
+    .sidebar {
+        display: none;
+    }
+
+    .sidebar-mobile {
+        min-height: 100vh;
+        width: 280px;
+        border-right: 1px solid var(--tertiary);
+        background-color: var(--background);
+        padding-top: 1.5em;
+        z-index: 999;
+        position: fixed;
+        top: 0;
+        display: none;
+    }
+
+    .sidebar-mobile a {
+        text-decoration: none;
+    }
+    
+    .sidebar-mobile .material-icons {
+        vertical-align: -2px;
+        color: var(--tertiary);
+    }
+
+    .menubar-mobile {
+        display: flex;
+    }
+
+    .menubar {
+        display: none;
+    }
+
+    .main-page {
+        padding: 1em;
+    }
+
+    .account-icon {
+        vertical-align: -7px;
+        font-size: 1.3em;
+    }
+
+    .dropdown-icon {
+        vertical-align: -3px;
+    }
+
+    .menu-btn, .close-btn {
+        background-color: transparent;
+        border: none;
+        font-size: 2em;
+    }
+
+    .menu-btn .material-icons {
+        font-size: 1em;
+        vertical-align: -6px;
+    }
+
+    .close-btn .material-icons {
+        color: white;
+        font-size: 1em;
+    }
+
+    .logo {
+        width: 10em;
+        margin: 0;
+    }
+}
+
+.movie-page {
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.movie-description {
+    position: relative;
+    display: flex;
+    top: 400px;
+    background-color: transparent;
+    height: fit-content;
+}
+
+.movie-title {
+    font-size: 3em;
+    font-weight: 500;
+}
+
+.movie-info {
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #a1a1a1;
+}
+
+.adult-badge {
+    border: 1px solid #a1a1a1;
+    color: #a1a1a1;
+    border-radius: 5px;
+    width: fit-content;
+    padding: 0 7px;
+    font-size: 0.7em;
+    height: fit-content;
+    align-self: center;
+    margin-right: 15px;
+}
+
+.trailer-btn {
+    color: var(--secondary) !important;
+    border-color: var(--secondary);
+    width: fit-content;
+    padding-right: 1em;
+    margin-right: 12px;
+}
+
+.imdb-btn {
+    border-color: #EDC748;
+    width: fit-content;
+    margin-right: 12px;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.imdb-btn span {
+    color: #EDC748;
+    vertical-align: middle;
+    font-weight: 700;
+}
+
+.trailer-btn:hover {
+    color: white !important;
+    border-color: var(--secondary);
+    background-color: var(--secondary);
+}
+
+.imdb-btn:hover {
+    border-color: #EDC748;
+    background-color: #EDC748;
+}
+
+.imdb-btn:hover > span {
+    color: black;
+}
+
+.trailer-icon {
+    color: var(--secondary);
+    vertical-align: middle;
+}
+
+.trailer-btn:hover .trailer-icon {
+    color: white !important;
+}
+
+.utility-btn {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0 12px;
+}
+
+.utility-btn .material-icons {
+    vertical-align: middle;
+    color: rgb(160, 160, 160);
+}
+
+.utility-btn.active .material-icons {
+    color: #5ABC6D;
+}
+
+.utility-btn.like.active .material-icons {
+    color: #CE3A60;
+}
+
+.movie-crew > .row {
+    font-weight: 200;
+    color: #a1a1a1;
+}
+
+.movie-crew-names {
+    color: white;
+    font-weight: 300;
+}
+
+.home-row {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    height: fit-content;
+}
+
+.home-row::-webkit-scrollbar {
+    display: none;
+}
+
+.search-input {
+    width: 400px;
+    background-color: var(--background);
+    border: 1px solid #a1a1a1;
+    padding: 0.5em 1em;
+    border-radius: 2em;
+    margin-bottom: 2em;
+}
+
+.search-input:focus {
+    outline: none;
+    border: 1.5px solid var(--primary);
+}
