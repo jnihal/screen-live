@@ -409,6 +409,10 @@ body {
 }
 
 @media only screen and (max-width:370px) {
+    .movie-description {
+        top: 300px;
+    }
+
     .trailer-btn {
         margin-right: 9px;
     }
