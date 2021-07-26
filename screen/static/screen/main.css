@@ -363,3 +363,47 @@ body {
     outline: none;
     border: 1.5px solid var(--primary);
 }
+
+@media only screen and (max-width:600px) {
+    #image {
+        width: 9.8em;
+        height: 15em;
+        border-radius: 0.5em;
+        margin: 0.3em;
+        box-sizing: border-box;
+        transition: transform .2s;
+    }
+
+    .container-fluid {
+        padding: 0;
+    }
+
+    .main-page {
+        padding: 0;
+    }
+
+    .menubar-mobile {
+        margin: 0.5em;
+    }
+
+    .movie-title {
+        font-size: 1.5em;
+    }
+
+    .movie-info {
+        font-size: 1.1em;
+    }
+
+    .imdb-btn {
+        display: none;
+    }
+
+    .movie-brief, .movie-add-info {
+        font-size: 0.9em;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+
+}
