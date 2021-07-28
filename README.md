@@ -10,7 +10,7 @@ Create a new account or you can use the dummy account to login.
 **Password**: test
 
 ## Features
-### Demo: youtu.be/Eem9knD_g0A
+#### Demo: [Watch Video](youtu.be/Eem9knD_g0A)
 ### Navigation
 - **Home** - Users can see recommended movies, thier watchlist, popular and trending movies.
 - **Discover** - Users can search for movies (search as you type) and also discover movies using genre.
