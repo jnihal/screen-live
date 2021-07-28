@@ -19,10 +19,13 @@ class Watchlist(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="watchlist")
     movie = models.IntegerField(blank=False)
 
+
 class Seenlist(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="seenlist")
     movie = models.IntegerField(blank=False)
 
+
 class Likedlist(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="likedlist")
     movie = models.IntegerField(blank=False)
+    
