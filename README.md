@@ -3,7 +3,14 @@ Screen is a website which will help users to discover new movies, keep track of 
 
 This project uses [**The Movie Database**](https://www.themoviedb.org/documentation/api) API to get details about the movies.
 
+The project is deployed using Heroku [here](https://screen-movie.herokuapp.com).
+Create a new account or you can use the dummy account to login.
+### Dummy Credentials
+**Email**: test@xyz.com <br>
+**Password**: test
+
 ## Features
+### Demo: youtu.be/Eem9knD_g0A
 ### Navigation
 - **Home** - Users can see recommended movies, thier watchlist, popular and trending movies.
 - **Discover** - Users can search for movies (search as you type) and also discover movies using genre.
@@ -21,9 +28,9 @@ This project uses [**The Movie Database**](https://www.themoviedb.org/documentat
 - Displays a list of movies similar to the current movie.
 - Ability to like/unlike and add/remove the movie to watchlist or seenlist.
 
-## Usage
+## To run the app locally
 - Run `pip install requirements.txt` to install necessary packages.
 - Open your terminal in the project's main directory (where the manage.py file is located)
-- Run `python manage.py makemigrations screen` to make migrations for the screen app.
+- Run `python manage.py makemigrations` to make migrations for the screen app.
 - Run `python manage.py migrate` to apply migrations to your database.
 - Run `python manage.py runserver` to start the server and use the website.
